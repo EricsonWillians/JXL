@@ -64,7 +64,7 @@ class JXLReader(JXLLoader):
             except ValueError:
                 return str(s)
         for node_name in self.outer_scopes.keys():
-            self.outer_scopes[node_name] = {
+            self.outer_scopes[node_name] = { 
                 str(name): (lambda x: extract_number(x))(value) for name, value in self.outer_scopes[node_name].items()}
          
     def evaluate(self):

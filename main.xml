@@ -9,6 +9,7 @@
 	</scope0>
 	<scope1> <!-- Scope variable. -->
 		<x>f5.38</x>  <!-- Float variable. -->
-		<s>"concatenation " + " example"</s> <!-- String variable -->
+		<s>"concatenation " + " example"</s> <!-- String variable. -->
+		<z>3</z> <!-- Integer variable. -->
 	</scope1>
 </JXL>
