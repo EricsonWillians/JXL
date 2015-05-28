@@ -4,6 +4,8 @@ The programming language that has the syntax of XML, the power of Java and was w
 #### Current Language Progress
 * Scopes
 * Integer, Float and String data types.
+* Variable access.
+* Python expressions within JXL.
 
 #### Coming Soon
 * Loops
