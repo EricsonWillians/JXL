@@ -9,8 +9,6 @@ The programming language that has the syntax of XML and the power of Java and Py
 
 #### Coming Soon
 * Statements.
-* Loops.
-* Functions.
 
 #### Technical Details
 
