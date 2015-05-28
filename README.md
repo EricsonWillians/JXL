@@ -2,14 +2,12 @@
 The programming language that has the syntax of XML, the power of Java and was written in Python.
 
 #### Current Language Progress
-* Global Variables
+* Scopes
 * Integer, Float and String data types.
-* Type Inference
 
 #### Coming Soon
 * Loops
 * Functions
-* Scopes and Local Variables
 
 #### Technical Details
 
