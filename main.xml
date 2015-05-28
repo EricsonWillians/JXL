@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Example Program in the Java Extensible Language -->
+<main>
+	<x>8.83</x>  <!-- Integer variable. -->
+	<y>f8.83</y> <!-- Float variable. -->
+	<string>Example</string> <!-- String variable. -->
+	<about>Ericson's JXL</about> <!-- String variable. -->
+	<name>Rederick Deathwill</name> <!-- String variable. -->
+	<link>http://docs.oracle.com/en/</link> <!-- String variable. -->
+</main>
