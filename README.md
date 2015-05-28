@@ -11,7 +11,7 @@ The programming language that has the syntax of XML and the power of Java and Py
 ##### Current Problems
 
 * It's possible to access JXL variables from Python expressions (Which are native), but it isn't possible to access JXL variables from within Python statements (Using the python tag).
-* Multi line statements using <python> raise a SyntaxError.
+* Multi line statements using the python tag raise a SyntaxError.
 
 #### Technical Details
 
