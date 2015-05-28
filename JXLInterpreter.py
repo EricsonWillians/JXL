@@ -51,9 +51,10 @@ class JXLReader(JXLLoader):
                     var_name = str(var.getNodeName())
                     if var_name not in ["#text", "#comment"]:
                         self.outer_scopes[node_name][var_name] = var.getTextContent()
-        self.determine_types()
-                    
-    def determine_types(self):
+        self.preprocess_types()
+        self.evaluate()
+        
+    def preprocess_types(self):
         def extract_number(s):
             try:
                 if s.startswith('f'):
@@ -63,7 +64,15 @@ class JXLReader(JXLLoader):
             except ValueError:
                 return str(s)
         for node_name in self.outer_scopes.keys():
-            self.outer_scopes[node_name] = {str(name): (lambda x: extract_number(x))(value) for name, value in self.outer_scopes[node_name].items()}
+            self.outer_scopes[node_name] = {
+                str(name): (lambda x: extract_number(x))(value) for name, value in self.outer_scopes[node_name].items()}
+         
+    def evaluate(self):
+        for node_name in self.outer_scopes.keys():
+            try:
+                self.outer_scopes[node_name] = {str(name): (lambda x: eval(str(x), globals(), self.outer_scopes[node_name]))(value) for name, value in self.outer_scopes[node_name].items()}
+            except SyntaxError:
+                raise RuntimeError("JXL Error: An invalid expression was used.")
         
 if __name__ == '__main__':
     

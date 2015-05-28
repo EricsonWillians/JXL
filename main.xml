@@ -2,19 +2,13 @@
 <!-- Example Program in the Java Extensible Language -->
 <JXL>
 	<scope0> <!-- Scope variable. -->
-		<x>8.83</x>  <!-- Integer variable. -->
-		<y>f8.83</y> <!-- Float variable. -->
-		<string>Example</string> <!-- String variable. -->
-		<about>Ericson's JXL</about> <!-- String variable. -->
-		<name>Rederick Deathwill</name> <!-- String variable. -->
-		<link>http://docs.oracle.com/en/</link> <!-- String variable. -->
+		<a>30</a>  <!-- Integer variable. -->
+		<b>(lambda x: x+x)(a)</b> <!-- Integer variable. -->
+		<c>sys.stdout.write("Python expression from inside JXL.\n")</c> <!-- None variable. -->
+		<d>[x*x for x in range(10)]</d> <!-- List variable. -->
 	</scope0>
 	<scope1> <!-- Scope variable. -->
-		<x>5.38</x>  <!-- Integer variable. -->
-		<y>f23.45</y> <!-- Float variable. -->
-		<string>Whatever</string> <!-- String variable. -->
-		<about>Ericson's JXL</about> <!-- String variable. -->
-		<name>H.P. Lovecraft</name> <!-- String variable. -->
-		<link>http://wikipedia.org</link> <!-- String variable. -->
+		<x>f5.38</x>  <!-- Float variable. -->
+		<s>"concatenation " + " example"</s> <!-- String variable -->
 	</scope1>
 </JXL>
