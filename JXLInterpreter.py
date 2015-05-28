@@ -2,7 +2,7 @@
 JXL - The Java Extensible Language.
 The JXL Interpreter.
 
-Created on 27/05/2015
+Created on 27/05/2015 
 @author: Ericson Willians (Rederick Deathwill)
 '''
 
@@ -68,13 +68,16 @@ class JXLReader(JXLLoader):
                 str(name): (lambda x: extract_number(x))(value) for name, value in self.outer_scopes[node_name].items()}
          
     def evaluate(self):
+        def eval_expression(expr): 
+            eval(str(expr), globals(), self.outer_scopes[node_name])
+        def run_python(code):
+            exec(str(code)) in globals(), locals()
         for node_name in self.outer_scopes.keys():
             try:
-                self.outer_scopes[node_name] = {str(name): (lambda x: eval(str(x), globals(), self.outer_scopes[node_name]))(value) for name, value in self.outer_scopes[node_name].items()}
+                self.outer_scopes[node_name] = {str(name): (lambda x: eval_expression(x) if str(name) != "python" else run_python(x))(value) for name, value in self.outer_scopes[node_name].items()}
             except SyntaxError:
                 raise RuntimeError("JXL Error: An invalid expression was used.")
         
 if __name__ == '__main__':
     
     jxl = JXLReader("main.xml")
-    print(jxl.outer_scopes)

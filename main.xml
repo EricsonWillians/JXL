@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Example Program in the Java Extensible Language -->
 <JXL>
-	<scope0> <!-- Scope variable. -->
-		<a>30</a>  <!-- Integer variable. -->
-		<b>(lambda x: x+x)(a)</b> <!-- Integer variable. -->
-		<c>sys.stdout.write("Python expression from inside JXL.\n")</c> <!-- None variable. -->
-		<d>[x*x for x in range(10)]</d> <!-- List variable. -->
+	<scope0>
+		<a>30</a>
+		<b>(lambda x: x+x)(a)</b>
+		<d>[x*x for x in range(10)]</d>
+		<python>var = 3; print(var)</python>
 	</scope0>
-	<scope1> <!-- Scope variable. -->
-		<x>f5.38</x>  <!-- Float variable. -->
-		<s>"concatenation " + " example"</s> <!-- String variable. -->
-		<z>3</z> <!-- Integer variable. -->
+	<scope1> 
+		<x>f5.38</x> 
+		<s>"concatenation " + " example"</s>
+		<z>3</z> 
 	</scope1>
 </JXL>
