@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Example Program in the Java Extensible Language -->
-<main>
-	<x>8.83</x>  <!-- Integer variable. -->
-	<y>f8.83</y> <!-- Float variable. -->
-	<string>Example</string> <!-- String variable. -->
-	<about>Ericson's JXL</about> <!-- String variable. -->
-	<name>Rederick Deathwill</name> <!-- String variable. -->
-	<link>http://docs.oracle.com/en/</link> <!-- String variable. -->
-</main>
+<JXL>
+	<scope0> <!-- Scope variable. -->
+		<x>8.83</x>  <!-- Integer variable. -->
+		<y>f8.83</y> <!-- Float variable. -->
+		<string>Example</string> <!-- String variable. -->
+		<about>Ericson's JXL</about> <!-- String variable. -->
+		<name>Rederick Deathwill</name> <!-- String variable. -->
+		<link>http://docs.oracle.com/en/</link> <!-- String variable. -->
+	</scope0>
+	<scope1> <!-- Scope variable. -->
+		<x>5.38</x>  <!-- Integer variable. -->
+		<y>f23.45</y> <!-- Float variable. -->
+		<string>Whatever</string> <!-- String variable. -->
+		<about>Ericson's JXL</about> <!-- String variable. -->
+		<name>H.P. Lovecraft</name> <!-- String variable. -->
+		<link>http://wikipedia.org</link> <!-- String variable. -->
+	</scope1>
+</JXL>
