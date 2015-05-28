@@ -8,6 +8,7 @@ The programming language that has the syntax of XML, the power of Java and was w
 * Python expressions within JXL.
 
 #### Coming Soon
+* Statements.
 * Loops.
 * Functions.
 
