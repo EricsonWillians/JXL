@@ -1,5 +1,5 @@
 # Java Extensible Language
-The programming language that has the syntax of XML, the power of Java and was written in Python.
+The programming language that has the syntax of XML and the power of Java and Python combined.
 
 #### Current Language Progress
 * Scopes.
