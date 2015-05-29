@@ -5,12 +5,12 @@ The programming language that has the syntax of XML and the power of Java and Py
 
 #### Current Language Progress
 * Scopes.
-* Python data types.
-* JXL Variable access.
-* Python expressions within JXL.
-* JXL Variable access from within python expressions.
-* Python statements within JXL.
-* JXL Variable access from within python statements.
+* Native Python data types.
+* JXL variable access.
+* Expression evaluation using Python by default.
+* JXL variable access from within python expressions.
+* Python statements within JXL using the python keyword tag.
+* JXL variable access from within python statements.
 
 ##### Current Problems
 
