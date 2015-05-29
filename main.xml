@@ -2,8 +2,7 @@
 <!-- Example Program in the Java Extensible Language -->
 <JXL>
 	<main>
-		<thelema>93</thelema>
-		<str>"Whatever" + str(93)</str>
-		<print>thelema</print>
+		<example>(4 * 2) * 9</example>
+		<print>example</print>
 	</main>
 </JXL>
