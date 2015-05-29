@@ -1,6 +1,14 @@
 # Java Extensible Language
 The programming language that has the syntax of XML and the power of Java and Python combined.
 
+```
+<JXL>
+	<main>
+		<print>"Hello World!"</print>
+	</main>
+</JXL>
+```
+
 [Check out the JXL Wiki and start playing!](https://github.com/EricsonWillians/JXL/wiki)
 
 #### Current Language Progress
