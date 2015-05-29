@@ -2,6 +2,10 @@
 <!-- Example Program in the Java Extensible Language -->
 <JXL>
 	<main>
-		<print>Hello World!</print>
+		<x>(3 + 9) * 8</x> <!-- hello stores string -->
+		<y>8</y>
+		<f>9.4</f>
+		<z>y+y</z>
+		<python>print(z*2)</python>
 	</main>
 </JXL>

@@ -56,38 +56,16 @@ class JXLReader(JXLLoader):
                     if var_name not in ["#text", "#comment"]:
                         if var_name == "print":
                             print(var.getTextContent())
+                        elif var_name == "python":
+                            exec(var.getTextContent()) in globals(), self.outer_scopes[node_name]
                         else:
-                            self.outer_scopes[node_name][var_name] = var.getTextContent()
-        self.preprocess_types()
-        self.evaluate()
-        
-    def preprocess_types(self):
-        def extract_number(s):
-            try:
-                if s.startswith('f'):
-                    return float(s[1:])
-                else:
-                    return int(float(s))
-            except ValueError:
-                return str(s)
-        for node_name in self.outer_scopes.keys():
-            self.outer_scopes[node_name] = { 
-                str(name): (lambda x: extract_number(x))(value) for name, value in self.outer_scopes[node_name].items()}
-         
-    def evaluate(self):
-        def eval_expression(expr): 
-            eval(str(expr), globals(), self.outer_scopes[node_name])
-        def run_python(code):
-            exec(str(code)) in globals(), self.outer_scopes[node_name]
-        for node_name in self.outer_scopes.keys():
-            try:
-                self.outer_scopes[node_name] = {str(name): (lambda x, y: eval_expression(y) if str(x) != "python" else run_python(y))(name, value) for name, value in self.outer_scopes[node_name].items()}
-            except SyntaxError:
-                pass
+                            self.outer_scopes[node_name][var_name] = eval(
+                                var.getTextContent(), globals(), self.outer_scopes[node_name])
         
 if __name__ == '__main__':
     
     if len(sys.argv) == 2:
         jxl = JXLReader(sys.argv[1])
+        print(jxl.outer_scopes)
     else:
         raise RuntimeError("JXL Error: No path to XML file provided.")
