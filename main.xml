@@ -2,7 +2,6 @@
 <!-- Example Program in the Java Extensible Language -->
 <JXL>
 	<main>
-		<var>7</var>
-		<python>print(var+var)</python>
+		<print>Hello World!</print>
 	</main>
 </JXL>
