@@ -55,7 +55,10 @@ class JXLReader(JXLLoader):
                     var_name = str(var.getNodeName())
                     if var_name not in ["#text", "#comment"]:
                         if var_name == "print":
-                            print(var.getTextContent())
+                            try:
+                                print(self.outer_scopes[node_name][var.getTextContent()])
+                            except KeyError:
+                                print(var.getTextContent())
                         elif var_name == "python":
                             exec(var.getTextContent()) in globals(), self.outer_scopes[node_name]
                         else:
@@ -66,6 +69,6 @@ if __name__ == '__main__':
     
     if len(sys.argv) == 2:
         jxl = JXLReader(sys.argv[1])
-        print(jxl.outer_scopes)
+    #    print(jxl.outer_scopes)
     else:
         raise RuntimeError("JXL Error: No path to XML file provided.")
