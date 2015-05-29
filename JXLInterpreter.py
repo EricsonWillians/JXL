@@ -1,3 +1,5 @@
+#! /usr/bin/env jython
+
 '''
 JXL - The Java Extensible Language.
 The JXL Interpreter.
@@ -7,13 +9,15 @@ Created on 27/05/2015
 '''
 
 from java.io import File
+from java.nio.file import Paths
 from javax.xml.parsers import DocumentBuilderFactory
 import sys
 
 class JXLLoader():
     
-    def __init__(self, file_name):  
-        self.file_name = file_name
+    def __init__(self, file_name):
+        path = Paths.get(file_name)
+        self.file_name = path.toAbsolutePath().toString()
         self.file = File(self.file_name)
         self.db_factory = DocumentBuilderFactory.newInstance()
         self.db_builder = self.db_factory.newDocumentBuilder()
@@ -71,7 +75,7 @@ class JXLReader(JXLLoader):
         def eval_expression(expr): 
             eval(str(expr), globals(), self.outer_scopes[node_name])
         def run_python(code):
-            exec(str(code)) in globals(), locals()
+            exec(str(code)) in globals(), self.outer_scopes[node_name]
         for node_name in self.outer_scopes.keys():
             try:
                 self.outer_scopes[node_name] = {str(name): (lambda x: eval_expression(x) if str(name) != "python" else run_python(x))(value) for name, value in self.outer_scopes[node_name].items()}
@@ -80,4 +84,7 @@ class JXLReader(JXLLoader):
         
 if __name__ == '__main__':
     
-    jxl = JXLReader("main.xml")
+    if len(sys.argv) == 2:
+        jxl = JXLReader(sys.argv[1])
+    else:
+        raise RuntimeError("JXL Error: No path to XML file provided.")

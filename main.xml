@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Example Program in the Java Extensible Language -->
 <JXL>
-	<scope0>
-		<a>30</a>
-		<b>(lambda x: x+x)(a)</b>
-		<d>[x*x for x in range(10)]</d>
-		<python>var = 3; print(var)</python>
-	</scope0>
-	<scope1> 
-		<x>f5.38</x> 
-		<s>"concatenation " + " example"</s>
-		<z>3</z> 
-	</scope1>
+	<main>
+		<var>7</var>
+		<python>print(var+var)</python>
+	</main>
 </JXL>
